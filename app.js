@@ -52,8 +52,8 @@ const limiter = rateLimit({
 app.use(limiter)
 
 let URI = "mongodb://127.0.0.1:27017/ToDo";
-let option = {user:'',pass:''};
-mongoose.connect(URI,option)
+let options = {user:'',pass:'',autoIndex:true};
+mongoose.connect(URI,options)
 .then(
 	()=>{
 		console.log("Mongo is connected");
