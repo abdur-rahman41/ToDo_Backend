@@ -20,7 +20,7 @@ import jwt from "jsonwebtoken";
   res.send(doc);
 
 }
-
+   
 
 export const UserLogin =async(req,res)=>{
    let UserName = req.body.UserName;
@@ -123,10 +123,35 @@ export const SelectProfile =async(req,res)=>{
 });
 
 
+}
 
+
+export const UpdateProfile =async(req,res)=>{
+   let UserName = req.headers.username;
+   let reqBody=req.body;
+
+
+   res.status(201).json(reqBody);
+   
+//   const data = await profileModel.find({
+//       UserName :UserName,
+     
+//    },
+  
+// ).then((data)=>{
+
+   
+//    res.status(200).json({status:"Success",data:data});
+    
+
+// })
+// .catch((error)=>{
+//     res.status(400).json({status:"fail",data:error});
+// });
 
 
 }
+
 
 
 export const ShowProfile = (req,res)=>{
